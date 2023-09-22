@@ -135,6 +135,20 @@ Q=s|(Q&(~r));
 Qbar=r|(Qbar&(~s));
 end
 endmodule
+
+JK FLIPFLOPS CODE:
+module flipflops(J,K,clk,Q,Qbar);
+input J,K,clk;
+output reg Q;
+output reg Qbar;
+initial Q=0;
+initial Qbar=1;
+always @(posedge clk)
+begin
+Q=(J&(~Q))|((~K)&Q);
+Qbar=((~J)&(Qbar))|K&(~Qbar);
+end
+endmodule
 ```
 
 
@@ -144,10 +158,13 @@ endmodule
 
 
 
-### RTL LOGIC FOR FLIPFLOPS 
+### RTL LOGIC FOR FLIPFLOPS:
+SR FLIPFLOPS FOR RTL LOGIC:
 ![image](https://github.com/janani225/Experiment--05-Implementation-of-flipflops-using-verilog/assets/113497333/f7c977ad-d189-497c-894a-b3945e216a61)
 
-
+### JK FLIPFLOPS FOR RTL LOGIC:
+JK FLIPFLOPS FOR RTL LOGIC:
+![image](https://github.com/janani225/Experiment--05-Implementation-of-flipflops-using-verilog/assets/113497333/289375d0-e8a9-4c61-ab71-8210de636bb4)
 
 
 
@@ -157,8 +174,10 @@ endmodule
 
 ### TIMING DIGRAMS FOR FLIP FLOPS 
 
-
+SR FLIPFLOPS FOR TIMING DIGRAMS:
 ![image](https://github.com/janani225/Experiment--05-Implementation-of-flipflops-using-verilog/assets/113497333/2c4fe200-c22e-42aa-94e9-dafa9d51ab6d)
+JK FLIPFLOPS FOR TIMING DIGRAMS:
+![image](https://github.com/janani225/Experiment--05-Implementation-of-flipflops-using-verilog/assets/113497333/b70c50a5-c83f-4ba9-ba1f-74df66aa47a4)
 
 
 
